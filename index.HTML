@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEAPORDY GAME</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main">
+        <h1>Jeaoperdy</h1>
+        <div class="buttonContainer">
+            <button id="play" class="buttons"> Start Game</button>
+            
+        <div class="board">
+            <table>
+              <thead>
+                <tr>
+                  <th class="categories"></th>
+                  <th class="categories"></th>
+                  <th class="categories"></th>
+                  <th class="categories"></th>
+                </tr>
+              </thead>
+                <tbody>
+                        <tr>
+                          <td class="square">
+                            <span class="cashValue">
+                          </td>
+                          <td class="square">
+                            <span class="cashValue">
+                          </td>
+                          <td class="square">
+                            <span class="cashValue">
+                          </td>
+                          <td class="square">
+                            <span class="cashValue">
+                          </td>
+                            
+                          </tr>
+                          <tr>
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                          </tr>
+                          <tr>
+                            
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                            
+                          </tr>
+                          <tr>
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                            <td class="square">
+                              <span class="cashValue">
+                            </td>
+                          </tr>
+                </tbody>
+            </table>
+            <div id="activeClue">
+              <p id="clueValue"></p>
+               <p id="clueQuestion"> </p>
+             <form id="answerForm">
+        <input type="text" id="userAnswer" placeholder="Your answer">
+            <button type="submit">Submit</button>
+        </form>
+          <p id="clueAnswer" style="display: none;"></p>
+              </div>    
+        </div>
+        <footer> 
+           <section>
+            <h4> Designed by : Gabriela </h4>
+           </section>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+    
+</body>
+</html>
+
+
+
+
+
+

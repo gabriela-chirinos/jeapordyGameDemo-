@@ -1,0 +1,336 @@
+	/* Presets */
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+            ol,ul{
+                list-style: none;
+             }
+       font-family: "Bebas Neue", sans-serif;
+       
+    }
+
+ body{
+    display: flex;
+    background-color: #e4fde1;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+ }
+
+
+h1{
+   font-size: 10rem;
+   text-align: center;
+   padding-top: 2%;
+   font-weight: 400;
+   font-style: normal;
+   text-transform: uppercase;
+
+}
+
+ .board{
+
+    height: 80vh;
+    width: 70vw;
+    margin: 0 auto;
+ 
+ }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 20px;
+    margin: 0 auto;
+
+  }
+
+
+
+
+
+th,td{
+  border: 1px solid black; 
+  padding: 10px; 
+  text-align: center; 
+  width: 25%; 
+  vertical-align: middle;
+  height: 100px;
+}
+tbody{
+  height: 70%;
+}
+
+ th{
+  margin-bottom:10px;
+ }
+
+
+ .buttonContainer{
+
+   width: 80%;
+   padding-top: 3%;
+   padding-bottom: 5%;
+ }
+
+
+ .categories{
+  background-color: #114B5F;
+  border-radius: 50px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  color: #F9D342;
+  cursor: pointer;
+  font-family: Inter,sans-serif;
+  font-size: 1.4rem;
+  height:8em;
+  width: 15em;  
+  padding: 20px;
+ }
+
+
+.cashValue{
+  font-size: 2rem;
+  color: #f45b69;
+  font-weight: bold ;
+
+}
+
+
+
+
+
+
+ 
+
+ .buttons{
+  align-items: center;
+  background-color: #114B5F;
+  border: 10px solid #111;
+  border-radius: 10PX;
+  box-sizing: border-box;
+  color: #cfc3c3;
+  cursor: pointer;
+  font-family: Inter,sans-serif;
+  font-size: 1.8rem;
+  height:120px;
+  width:10em;
+  line-height: 24px;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-right: 10px;
+}
+
+
+
+.buttons:after {
+  background-color: #111;
+  border-radius: 3px;
+  content: "";
+  display: block;
+  height: 100px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -5px;
+  transform: translate(15px, -9px);
+  transition: transform .5s ease-out;
+  z-index: -1;
+}
+
+
+
+
+
+.buttons:hover:after {
+  transform: translate(0, 0);
+  
+}
+
+
+.buttons:active {
+  
+  outline: 0;
+}
+
+
+.buttons:hover {
+  outline: 0;
+  background-color: #F45B69;
+}
+th:hover {
+  
+  background-color: #8ab6fc ;
+  border: 5px #F45B69 dashed;
+  color: black;
+  transition: background-color 0.5s ease;
+}
+
+.square {
+
+
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  width: 300px;  /* Set a fixed width for squares */
+  height: 300px;  /* Set a height to maintain the ratio */
+  border: 2px solid rgba(244, 91, 105, 0.25);
+  border-radius: 15%; /* Reduce the radius for a cleaner look */
+  background-color: rgba(69, 105, 144, 0.35);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #114B5F;
+  transition: background-color 0.5s ease; /* Add transition for smooth hover effect */
+}
+
+.square:hover {
+  background-color: rgba(69, 105, 144, 0.65); /* Darken the color on hover */
+}
+
+
+
+
+
+
+#activeClue {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  min-height: 50vh;
+  height: auto;
+  max-width: 90vw; /* overflow for smaller screen  */
+  max-height: 70vh;
+  background-color: #114B5F;
+  color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  text-align: center;
+  opacity: 70%;
+  display: none;
+  overflow-y: auto; /* Allows scrolling if content exceeds height */
+  z-index: 300;
+ 
+}
+
+#activeClue input[type="text"] {
+  width: 80%;
+  height: 80px;
+  padding: 10px;
+  margin-top: 2em;
+  font-size: 3rem;
+  
+}
+
+
+
+
+/* display when active */
+#activeClue.active #userAnswer, #activeClue.active button[type="submit"] {
+  display: block;   
+}
+
+
+
+#activeClue button {
+  padding: 10px 20px;
+  background-color: #D69F4C;
+  color: black;
+  border: none;
+  cursor: pointer;
+ margin-top: 100px;
+  margin-left: 25px;
+  font-size: 3rem;
+}
+
+#answerForm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+
+
+body::after {
+  content: none;
+}
+
+
+body.overlay-active::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay background */
+  z-index: 100; /* Layer it below the active clue div */
+}
+
+
+
+
+
+
+
+#activeClue .clue-value {
+  font-size: 4.5rem; /* Slightly larger font for value */
+  font-weight: bold;
+}
+
+#activeClue .clue-text {
+  font-size: 4rem; /* Font size for question text */
+  margin-top: 20px;
+  color: #F9D342; /* Highlight color for questions */
+}
+
+
+
+
+
+#scoreDisplay{
+position:absolute;
+  font-size: 4rem;
+  
+  left: 4em;
+  top: 3em;
+  
+}
+
+
+
+
+
+footer {
+ height: 200px;
+  
+  
+  margin-top: 3em;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+
+/*  media break  */
+
+/* @media (min-width: 768px) {
+  .buttons {
+    padding: 0 40px;
+  }
+}
+  */
+
+
+  
